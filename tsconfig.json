@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true
+  },
+  "allowSyntheticDefaultImports": true,
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs",
+    "exclude": [
+      "**/*.test.ts",
+      "**/type.ts"
+    ]
+  },
+  "include": ["src/index.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}

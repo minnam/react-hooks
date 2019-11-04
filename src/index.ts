@@ -4,7 +4,7 @@ import useAxios from './useAxios'
 import useCounter from './useCounter'
 import useObject from './useObject'
 import useText from './useText'
-import useToggle from './useToggle'
+import useToggle from './useBoolean'
 import useValue from './useValue'
 
 export {
