@@ -16,6 +16,6 @@
       "**/type.ts"
     ]
   },
-  "include": ["src/index.ts"],
+  "include": ["modules/index.ts"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }

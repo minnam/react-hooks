@@ -1,14 +1,15 @@
 import { useState } from 'react'
 
-export type UseValueReturnType<T> = {
+export type UseValueReturnType<X> = {
   /** Updates current value. (Identical to setValue) */
-  readonly set: React.Dispatch<T>,
+  readonly set: React.Dispatch<X>,
   /** Updates current value. (Identical to set)  */
-  readonly setValue: React.Dispatch<T>,
+  readonly setValue: React.Dispatch<X>,
   /** Resets current value to `initialValue` */
   readonly reset: () => void
 }
-export type UseValueType<X, Y> = (initialValue?: X) => [X, UseValueReturnType<X> & Y]
+
+export type UseValueType<X, Y, Z = {}> = (initialValue?: X, options?: Z) => [X, UseValueReturnType<X> & Y]
 
 /**
  * useValue
@@ -17,7 +18,7 @@ export type UseValueType<X, Y> = (initialValue?: X) => [X, UseValueReturnType<X>
  *
  * @param initialValue Initial value
  */
-const useValue: (UseValueType<any, any>) = (initialValue) => {
+const useValue: (UseValueType<any, UseValueReturnType<any>>) = (initialValue, ion) => {
   const [value, set] = useState(initialValue)
   const reset = () => set(initialValue)
 

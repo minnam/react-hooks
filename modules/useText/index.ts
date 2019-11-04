@@ -1,6 +1,6 @@
 import useValue, { UseValueType } from '../useValue'
 
-type ReturnType = {
+type UseTextReturnType = {
   /** Updates text to uppercase */
   readonly toUpperCase: () => void
   /** Updates text to lowercase */
@@ -14,7 +14,7 @@ type ReturnType = {
  *
  * @param initialValue Initial value
  */
-const useText: UseValueType<string, ReturnType> = (initialValue = '') => {
+const useText: UseValueType<string, UseTextReturnType> = (initialValue = '') => {
   const [value, $value] = useValue(initialValue)
   const toUpperCase = () => $value.set(value.toUpperCase())
   const toLowerCase = () => $value.set(value.toLowerCase())
