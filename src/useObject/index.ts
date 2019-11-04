@@ -2,7 +2,7 @@ import useValue, { UseValueReturnType } from '../useValue'
 
 type ReturnType<Z> = {
   /** Updates value with overwritting previous value */
-  update: (value: Z) => void
+  readonly update: (value: Z) => void
 }
 export type UseObjectType = <X extends object>(initialValue?: X) => [X, UseValueReturnType<X> & ReturnType<X>]
 

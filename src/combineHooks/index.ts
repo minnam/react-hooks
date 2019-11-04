@@ -1,11 +1,12 @@
-/** Utils ======================================================================================= */
 import { overlap } from '../utils/overlap'
 
-interface combinedHooksType {
-  (hooks: any []): {[key: string]: (...args: any[]) => {}}
-}
-/** combineHooks ================================================================================ */
-const combineHooks: combinedHooksType = (hooks) => {
+type CombineHooksType = { (hooks: any []): {[key: string]: (...args: any[]) => void} }
+
+/**
+ * combineHooks
+ * @param hooks
+ */
+const combineHooks: CombineHooksType = (hooks) => {
   const hooksCopy = [...hooks]
   const combinedHooks: {[key: string]: any} = {}
 
