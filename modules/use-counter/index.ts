@@ -5,6 +5,8 @@ type ReturnType = {
   readonly increment: (newOffset?: number) => void
   /** Subtracts offet or new offset to the value and updates state */
   readonly decrement: (newOffset?: number) => void
+  readonly isMin: () => boolean
+  readonly isMax: () => boolean
 }
 
 type UseCounterOptionType = { min?: number, max?: number, offset?: number }
@@ -24,7 +26,15 @@ const useCounter: UseValueType<number, ReturnType, UseCounterOptionType> = (init
   const increment = (newOffset = offset) => $value.set(Math.max(Math.min(value + newOffset, max), min))
   const decrement = (newOffset = offset) => $value.set(Math.max(Math.min(value - newOffset, max), min))
 
-  return [value, { ...$value, increment, decrement }]
+  return [
+    value,
+    {
+      ...$value,
+      increment,
+      decrement,
+      isMin: () => value === min,
+      isMax: () => value === max
+    }]
 }
 
 export default useCounter
