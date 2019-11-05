@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["es6", "dom"],
+    "lib": ["es6", "es6", "dom"],
+    "jsx": "react",
     "module": "commonjs",
+		"moduleResolution": "node",
     "declaration": true,
     "outDir": "./lib",
     "strict": true
@@ -16,6 +18,6 @@
       "**/type.ts"
     ]
   },
-  "include": ["modules/index.ts"],
+  "include": ["modules/index.ts", "examples/index.tsx"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
