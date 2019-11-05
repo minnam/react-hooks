@@ -1,4 +1,4 @@
-import useValue, { UseValueReturnType } from '../useValue'
+import useValue, { UseValueReturnType } from '../use-value'
 
 export type UseObjectReturnType<X>  = UseValueReturnType<X> & {
   /** Updates value with overwritting previous value */

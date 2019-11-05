@@ -1,5 +1,5 @@
 import axios from 'axios'
-import useObject, { UseObjectReturnType } from '../useObject'
+import useObject, { UseObjectReturnType } from '../use-object'
 
 type UseAxiosStateType = { loading: boolean, error?: Error, data?: unknown }
 

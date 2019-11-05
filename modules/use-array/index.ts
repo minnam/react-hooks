@@ -1,4 +1,4 @@
-import useValue, { UseValueReturnType } from '../useValue'
+import useValue, { UseValueReturnType } from '../use-value'
 
 type UseArrayReturnType<X> = UseValueReturnType<X> & {
   /** Adds new item and updates current state */

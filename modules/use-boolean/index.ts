@@ -1,4 +1,4 @@
-import useValue, { UseValueType } from '../useValue'
+import useValue, { UseValueType } from '../use-value'
 
 type ReturnType = {
   /** Sets current value to the opposite */

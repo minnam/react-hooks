@@ -1,4 +1,4 @@
-import useValue, { UseValueType } from '../useValue'
+import useValue, { UseValueType } from '../use-value'
 
 type ReturnType = {
   /** Adds offet or new offset to the value and updates state */
